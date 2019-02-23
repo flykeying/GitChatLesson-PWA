@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Worker</title>
+</head>
+<body>
+    <script>
+        if(typeof(Worker)==="undefined"){
+            console.log("浏览器不支持worker")
+        }else{
+            var worker = new Worker('./worker.js')
+            worker.postMessage('Hello World')
+            worker.onmessage = function (e) {
+                if(e.data == 20){
+                    worker.terminate()
+                }
+                console.log(e.data)
+            }
+        }
+    </script>
+</body>
+</html>

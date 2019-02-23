@@ -1,0 +1,12 @@
+{
+  "name": "Lesson6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
