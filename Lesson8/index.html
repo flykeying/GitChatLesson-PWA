@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+caches.delete("config") //不管有没有先删了它，没有并不会报错的
+var a = new Promise((resolve,reject) => {
+    caches.open("config").then( cache=>{
+        resolve( 
+            cache.put(
+                '/version',
+                new Response('1.0.0', {status:200})
+            )
+        )
+        
+    })
+})
+a.then(()=>{
+    return caches.match("/version")
+}).then(r=>{
+    return r.text()
+}).then(r=>{
+    console.log(r)
+})
+    </script>
+</body>
+</html>

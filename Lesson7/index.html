@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>serviceWorkers</title>
+</head>
+<body>
+    <button id="btn">发消息</button>
+<script>
+
+if ('serviceWorker' in navigator) {
+    if (navigator.serviceWorker.controller === null){ //判断是否注册过serviceWorker
+        window.addEventListener('load', function() { //页面加载完成后注册服务
+            navigator.serviceWorker.register('./serviceWorker.js').then(function(registration) {
+                console.log('注册成功');
+            }).catch(function(err) {
+                console.log('注册失败');
+            });
+        });
+    }
+}else{
+    alert("浏览器不支持serviceWorkers... ")
+}
+
+if(window.fetch?true:false){
+    fetch("./fetch.json")
+        .then(function(resolve){
+            resolve.json().then(function(data) {  
+                console.log(data)
+                })
+        })
+        .catch(function(reject){
+            console.log(resolve)
+        })
+}
+
+
+document.getElementById('btn').addEventListener('click', function () {
+    navigator.serviceWorker.controller && navigator.serviceWorker.controller.postMessage('hello world');
+});
+
+
+navigator.serviceWorker.addEventListener('message', function (e) {
+    console.log(e.data)
+});
+
+// caches.open("config").then(()=>{
+//     return caches.match("/version")
+// }).then(r=>{
+//     return r.text()
+// }).then(r=>{
+//     console.log(r)
+// }).catch(err=>{//如果catchStrong没有/version
+//     console.log("error")
+// })
+</script>
+</body>
+</html>
