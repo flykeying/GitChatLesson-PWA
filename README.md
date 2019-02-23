@@ -46,6 +46,7 @@ PWA轻应用的体验在在线或离线的环境中更好的模拟Navive App，�
 
 ## 代码功能列表
 
-文件夹|功能
---|--
-Lesson2|Koa2中设置Cache-Control
+文件夹|功能|启动方式
+--|--|--
+Lesson2|Koa2中设置Cache-Control|npm install , npm start
+Lesson3|AppCatch|npm install -g browser-sync , npm start
