@@ -3,8 +3,7 @@
 
 课程地址: [GitBook](https://gitbook.cn/gitchat/columns)
 
-![PWA零基础到应用入门实战](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
-u=702257389,1274025419&fm=27&gp=0.jpg "PWA零基础到应用入门实战")
+![PWA零基础到应用入门实战](https://raw.githubusercontent.com/flykeying/GitChatLesson-PWA/master/images/title.png "PWA零基础到应用入门实战")
 
 ## 课程介绍
 >2018年4月份起微软的应用商店上线第一批PWA应用以来，近一年随着safari开始支持ServiceWorkers，国内浏览器厂商也逐步开始大力加持，到本课程发稿起95%以上的浏览器都支持了PWA的横幅安装。PWA轻应用也逐渐被广大站点使用和推广。
