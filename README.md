@@ -50,3 +50,4 @@ PWA轻应用的体验在在线或离线的环境中更好的模拟Navive App，�
 --|--|--
 Lesson2|Koa2中设置Cache-Control|npm install , npm start
 Lesson3|AppCatch|npm install -g browser-sync , npm start
+Lesson4|manifest| npm start
