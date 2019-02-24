@@ -1,0 +1,12 @@
+{
+  "name": "pwa-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files \"**/*.css, **/*.html, **/*.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

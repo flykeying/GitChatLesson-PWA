@@ -52,3 +52,5 @@ Lesson2|Koa2中设置Cache-Control|npm install , npm start
 Lesson3|AppCatch|npm install -g browser-sync , npm start
 Lesson4|manifest| npm start
 Lesson6|Web Service| npm start
+Lesson7|ServiceWorkers| npm start
+Lesson8|CacheStorage| npm start
