@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="s"></h1>
+<script>
+//step 1 声明一个 10240 b大小的变量
+   var tempStr = "0123456789" // 先声明一个字节为1长度的字符串变量
+   var increase = function(str) {
+     str += tempStr //字符串相加
+     if(str.length == 10240) {
+       tempStr = str
+       return
+     }
+     increase(str)
+   }
+   increase(tempStr)
+//step 2 通过setItem 叠加字节放入localStorage测量大小
+   var str = tempStr
+   var time = setInterval(function(){
+      str += tempStr
+      try{
+       window.localStorage.removeItem('test') //先删除test的key
+       window.localStorage.setItem('test', str) //叠加后再添加key
+       document.getElementById("s").innerHTML = str.length / 1024 + ' KB'
+      }
+      catch(e){//无法存储就是最大量
+        document.getElementById("s").innerHTML = '最大存储：' + str.length / 1024 + ' KB'
+        clearInterval(time)
+      }
+   }, 100)
+</script>
+</body>
+</html>
