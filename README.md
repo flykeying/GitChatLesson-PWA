@@ -54,3 +54,4 @@ Lesson4|manifest| npm start
 Lesson6|Web Service| npm start
 Lesson7|ServiceWorkers| npm start
 Lesson8|CacheStorage| npm start
+Lesson13|CacheStorage| [Testbrowser](./lesson13/testLocalStorage.html)
