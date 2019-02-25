@@ -31,13 +31,14 @@ PWA轻应用的体验在在线或离线的环境中更好的模拟Navive App，�
   + 第七章 穿越到cacheStorage
   + 第八章 处理网络请求的后台环境
   + 第九章 ServiceWorkers的生命周期
+  + 第十章 IndexedDB知识点
 - 第三部分 PWA
-  + 第十章 PWA上线
-  + 第十一章 PWA安装横幅事件
-  + 第十二章 基于PWA的消息推送
-  + 第十三章 LAVAS基于 Vue.js 的 PWA 解决方案
-  + 第十四章 PWA实现的抖音轻应用
-- 结语：喜忧参半的PWA
+  + 第十一章 PWA上线
+  + 第十二章 PWA安装横幅事件
+  + 第十三章 LocalStorage大小控制
+  + 第十五章 PWA 打包解决方案
+  + 第十四章 基于PWA的消息推送
+- 结语：为努力而欢呼
 
 ## 讲师
 姜威: 网名Wos,全栈工程师，16年行业经验 [<2019]。现从事互联网产品咨询。擅长用户体验设计，产品法相分析、系统架构。互联网前端课程知名讲师.
@@ -54,4 +55,4 @@ Lesson4|manifest| npm start
 Lesson6|Web Service| npm start
 Lesson7|ServiceWorkers| npm start
 Lesson8|CacheStorage| npm start
-Lesson13|CacheStorage| [Testbrowser](./lesson13/testLocalStorage.html)
+Lesson13|CacheStorage| npm start

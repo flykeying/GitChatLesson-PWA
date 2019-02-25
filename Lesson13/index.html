@@ -7,33 +7,58 @@
     <title>Document</title>
 </head>
 <body>
-<h1 id="s"></h1>
+<input type="text" value="" id="version">
+<button onClick="ser()">查询最新版本</button>
 <script>
-//step 1 声明一个 10240 b大小的变量
-   var tempStr = "0123456789" // 先声明一个字节为1长度的字符串变量
-   var increase = function(str) {
-     str += tempStr //字符串相加
-     if(str.length == 10240) {
-       tempStr = str
-       return
-     }
-     increase(str)
-   }
-   increase(tempStr)
-//step 2 通过setItem 叠加字节放入localStorage测量大小
-   var str = tempStr
-   var time = setInterval(function(){
-      str += tempStr
-      try{
-       window.localStorage.removeItem('test') //先删除test的key
-       window.localStorage.setItem('test', str) //叠加后再添加key
-       document.getElementById("s").innerHTML = str.length / 1024 + ' KB'
+
+  
+
+
+
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('./serviceWorker.js')
+      .then(function(registration) {
+          console.log('注册成功');
+      }).catch(function(err) {
+          console.log('注册失败');
+      });
+    
+    if(window.fetch?true:false){
+      fetch("./ser.json")
+          .then(function(resolve){
+              resolve.json().then(function(data) {
+                console.log(data)
+                document.getElementById("version").value = data.version
+              })
+          })
+          .catch(function(reject){
+              console.log(resolve)
+          })
       }
-      catch(e){//无法存储就是最大量
-        document.getElementById("s").innerHTML = '最大存储：' + str.length / 1024 + ' KB'
-        clearInterval(time)
+  })
+
+
+  setInterval(function(){
+      if(window.navigator.onLine==true){
+        navigator.serviceWorker.controller.postMessage('online');
+      }else{
+        navigator.serviceWorker.controller.postMessage('offline');
       }
-   }, 100)
+  },100)
+
+  function ser(){
+    var timestamp = Date.parse(new Date());
+    fetch("./version?time="+timestamp)
+        .then(function(resolve){
+            resolve.json().then(function(data) {
+              console.log("version:", data)
+              document.getElementById("version").value = data.version
+            })
+        })
+        .catch(function(reject){
+            console.log(reject)
+        })
+    }
 </script>
 </body>
 </html>
